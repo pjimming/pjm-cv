@@ -1,13 +1,14 @@
 {
     "title": "Resume",
-    "name": "startbootstrap-resume",
-    "version": "7.0.6",
+    "name": "pjm-resume",
+    "version": "1.0.0",
     "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run build:CNAME",
         "build:assets": "node scripts/build-assets.js",
         "build:pug": "node scripts/build-pug.js",
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
+        "build:CNAME": "node scripts/build-CNAME.js",
         "clean": "node scripts/clean.js",
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
