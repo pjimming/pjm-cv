@@ -8,7 +8,7 @@ html(lang='en')
         meta(name='description', content='pjm cv')
         meta(name='author', content='panjiangming')
 
-        title 履历 - 潘江明 | Top Coder
+        title CV - 潘江明的一生
 
         link(rel='icon', type='image/x-icon', href='assets/img/favicon.png')
 
@@ -36,8 +36,10 @@ html(lang='en')
                 ul.navbar-nav
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#about') 关于我
+                    //- li.nav-item 
+                    //-     a.nav-link.js-scroll-trigger(href='#project/research_experience') 项目 / 研究经历
                     li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#experience') 工作经历
+                        a.nav-link.js-scroll-trigger(href='#work_experience') 工作经历
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#education') 教育经历
                     li.nav-item
@@ -60,7 +62,7 @@ html(lang='en')
                         | 中国 · 浙江 · 杭州市留和路318号 · 邮编: 310023 · 
                         a(href='mailto:panjm2001@126.com') panjm2001@126.com
                     p.lead.mb-5
-                        | 我是一名后端工程师，懂一点点前端，但不多；打过ACM算法竞赛，有点荣誉，但也不多。
+                        | 我是一名后端开发工程师，懂一点点前端，但不多；打过ACM算法竞赛，有点荣誉，但也不多。
                     .social-icons
                         a.social-icon(href='https://github.com/pjimming/' target='_blank')
                             i.fab.fa-github
@@ -68,11 +70,15 @@ html(lang='en')
                             i.fab.fa-weibo
                         a.social-icon(href='https://space.bilibili.com/277917859' target='_blank')
                             i.fab.fa-bilibili
+                        a.social-icon(href='https://wiki.pjmcode.top' target='_blank')
+                            i.fas.fa-blog
+                        a.social-icon(href='https://pjmcode.top' target='_blank')
+                            i.fas.fa-house
 
             hr.m-0
 
             // Experience
-            section#experience.resume-section
+            section#work_experience.resume-section
                .resume-section-content
                     h2.mb-5 工作经历
 
@@ -96,7 +102,7 @@ html(lang='en')
                         .flex-grow-1
                             h3.mb-0 浙江科技大学
                             .subheading.mb-3 工学学士
-                            div 计算机科学与技术
+                            div 计算机科学与技术（国家级一流专业）
                             p 核心课程：计算机网络、操作系统、计算机组成、数据结构、数据库等
                         .flex-shrink-0
                             span.text-primary 2020.9 - 2024.6
@@ -133,6 +139,8 @@ html(lang='en')
                             i.fab.fa-python
                         li.list-inline-item
                             i.fab.fa-linux
+                        li.list-inline-item
+                            i.fab.fa-ubuntu
                         li.list-inline-item
                             i.fab.fa-docker
                         li.list-inline-item
