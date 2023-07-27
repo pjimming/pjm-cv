@@ -32,3 +32,16 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function getCopyrightYear() {
+    var startYear = 2023;
+    var endYear = new Date().getFullYear();
+    if (startYear === endYear) {
+        return startYear;
+    }
+    return startYear + " - " + endYear;
+}
+
+window.onload = function () {
+    document.getElementById("copyrightYear").textContent = getCopyrightYear();
+};
