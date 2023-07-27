@@ -11,20 +11,20 @@ const stylesPath = '../src/scss/styles.scss';
 const destPath = upath.resolve(upath.dirname(__filename), '../dist/css/styles.css');
 
 module.exports = function renderSCSS() {
-    
+
     const results = sass.renderSync({
         data: entryPoint,
         includePaths: [
             upath.resolve(upath.dirname(__filename), '../node_modules')
         ],
-      });
+    });
 
     const destPathDirname = upath.dirname(destPath);
     if (!sh.test('-e', destPathDirname)) {
         sh.mkdir('-p', destPathDirname);
     }
 
-    postcss([ autoprefixer ]).process(results.css, {from: 'styles.css', to: 'styles.css'}).then(result => {
+    postcss([autoprefixer]).process(results.css, { from: 'styles.css', to: 'styles.css' }).then(result => {
         result.warnings().forEach(warn => {
             console.warn(warn.toString())
         })
@@ -35,8 +35,8 @@ module.exports = function renderSCSS() {
 
 const entryPoint = `/*!
 * Start Bootstrap - ${packageJSON.title} v${packageJSON.version} (${packageJSON.homepage})
-* Copyright 2013-${new Date().getFullYear()} ${packageJSON.author}
-* Licensed under ${packageJSON.license} (https://github.com/StartBootstrap/${packageJSON.name}/blob/master/LICENSE)
+* Copyright 2023-${new Date().getFullYear()} ${packageJSON.author}
+* Licensed under ${packageJSON.license} (https://github.com/pjimming/${packageJSON.name}/blob/master/LICENSE)
 */
 @import "${stylesPath}"
 `
