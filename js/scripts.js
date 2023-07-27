@@ -1,5 +1,5 @@
 /*!
-* Start Bootstrap - Resume v1.0.0 (https://cv.pjmcode.top)
+* PJM CV - Resume v1.0.0 (https://cv.pjmcode.top)
 * Copyright 2023-2023 panjiangming
 * Licensed under MIT (https://github.com/pjimming/pjm-resume/blob/master/LICENSE)
 */
