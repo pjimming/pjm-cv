@@ -15,7 +15,7 @@ module.exports = function renderScripts() {
     const destPathScriptsJS = upath.resolve(upath.dirname(__filename), '../dist/js/scripts.js');
 
     const copyright = `/*!
-* Start Bootstrap - ${packageJSON.title} v${packageJSON.version} (${packageJSON.homepage})
+* PJM CV - ${packageJSON.title} v${packageJSON.version} (${packageJSON.homepage})
 * Copyright 2023-${new Date().getFullYear()} ${packageJSON.author}
 * Licensed under ${packageJSON.license} (https://github.com/pjimming/${packageJSON.name}/blob/master/LICENSE)
 */
