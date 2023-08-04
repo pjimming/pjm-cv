@@ -2,7 +2,7 @@
 
 ## Status
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)]
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![npm version](https://img.shields.io/npm/v/startbootstrap-resume.svg)
 
 ## Usage
