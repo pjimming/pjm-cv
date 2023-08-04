@@ -26,6 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">关于我</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#project_research_experience">项目 & 研究经历</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#work_experience">工作经历</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">教育经历</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">技术栈</a></li>
@@ -65,15 +66,62 @@
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Experience-->
+            <!-- Project / Research Experience-->
+            <section class="resume-section" id="project_research_experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">项目 & 研究经历</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-3">
+                                RLock | 基于 Golang 开发的 Redis 分布式锁
+                                <a href="https://github.com/pjimming/rlock" target="_blank"><i class="fab fa-github fa-bounce"></i></a>
+                            </h3>
+                            <div class="subheading mb-2">个人开发🙋</div>
+                            <p class="mb-1">实现了分布式系统下，通过使用锁来对资源进行保护，并且由于 Redis 数据库的过期机制，很大程度上的避免了发生死锁的可能性。同时该锁实现了可重入、阻塞申请、异步续租等功能。在多个 Redis 节点的情况下，实现了 RedLock 算法，在高可用性和数据一致性之间做了一个平衡。</p>
+                            <ul class="mb-0">
+                                <li>在加锁、解锁和续租操作时，通过执行 Lua 脚本，来满足操作的原子性。</li>
+                                <li>使用 Hash 数据结构来实现对锁的可重入性的支持，获得锁的节点资源若再次申请该锁时，不会被阻塞。</li>
+                                <li>以阻塞的方式请求锁的时候，若 tryLock 失败，则以自旋的方式不断的申请锁，直到成功申请到该锁或阻塞超时。</li>
+                                <li>使用看门狗的方式实现对 Redis 锁的异步续租，并且通过看门狗的运行标记保证重入锁时，看门狗不会重复启动。通过上下文传递结束命令，实现对看门狗的终止续租操作。</li>
+                                <li>实现 RedLock 算法，满足在多 Redis 节点的情况下，缓和高可用与数据一致性之间的矛盾。</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2023.7 - 2023.8</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-3">CMDB | 基于 Golang 开发的基础数据管理数据库</h3>
+                            <div class="subheading mb-2">后台研发🤵</div>
+                            <p class="mb-1">实现了七牛云新一代企业级 CMDB 的后端系统的设计、研发，并通过接入 CI/CD 流程进行版本发布。</p>
+                            <ul class="mb-0">
+                                <li>独立设计分布式机制，通过重构之前旧 CMDB 系统的 service 层，保证两个系统间数据同步。并且集成操作失败告警机制，防止数据同步时发生异常而不能感知。</li>
+                                <li>开发 ApiLog 中间件，通过在 route 层对 http 请求进行采集，记录请求接口、操作人、操作耗时、IP 地址、请求是否成功等相关数据。</li>
+                                <li>通过并发请求实现全局搜索 API，保证并发安全，全库搜索耗时平均 2s 左右。尝试过前缀字典树和 AC 自动机算法，效果不理想。</li>
+                                <li>尝试使用记忆化搜索的算法对域名解析记录进行处理，在毫秒级的时间里处理 100,000 条域名解析记录，可以得到 9,800,000 条【初始域名 -> IP】的记录。</li>
+                                <li>独立设计数据权限系统，通过 RBAC 系统来实现控制不同用户的多种角色的数据访问权限。</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2023.5 - 至今</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Work Experience-->
             <section class="resume-section" id="work_experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">工作经历</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">后端实习生</h3>
-                            <div class="subheading mb-3"><a href="https://www.qiniu.com/" target="_blank">七牛云</a></div>
-                            <p>主要负责七牛云企业级 DevOps 平台的多个组件的设计与开发，编程语言主要为 Golang。</p>
+                            <h3 class="mb-3">
+                                七牛云
+                                <a href="https://www.qiniu.com/" target="_blank"><img src="assets/img/qiniu-logo.png" alt="" style="height: 32px; border-radius: 5px" /></a>
+                            </h3>
+                            <div class="subheading mb-2">实习生，基础架构部</div>
+                            <p class="mb-1">主要负责七牛云企业级 DevOps 平台的多个组件的设计与开发，编程语言主要为 Golang。</p>
+                            <ul class="mb-0">
+                                <li>负责七牛云早期企业级 CMDB 的开发，设计相关系统，开发后端 API 接口、插件、中间件以及日常维护。</li>
+                                <li>尝试通过使用协程和分页的策略对海量数据迁移工具进行优化，在保证并发安全的情况下，将性能提升了 100 多倍，原本的工具在 200 秒内可迁移 3,200 条数据，优化完之后在 300 秒的时间内，可以迁移 450,000 条数据。</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">2023.5 - 至今</span></div>
                     </div>
@@ -124,6 +172,7 @@
                         <li class="list-inline-item"><i class="fab fa-js"></i></li>
                         <li class="list-inline-item"><i class="fab fa-npm"></i></li>
                         <li class="list-inline-item"><i class="fab fa-node"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-git-alt"></i></li>
                     </ul>
                     <div class="subheading mb-3">技能</div>
                     <ul class="fa-ul mb-0">
@@ -158,6 +207,10 @@
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
                             熟练 Linux 环境下编程，了解部分 Linux 基础命令。熟悉 Docker 容器的使用，掌握 Docker 的基本命令。
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            熟练使用 Git 工具，了解 Makefile 的使用。
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
@@ -197,6 +250,11 @@
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
                             工业互联网平台开发工程师中级 2023
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
+                            <a href="https://github.com/pjimming/rlock" target="_blank">RLock</a>
+                            开源项目作者
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>

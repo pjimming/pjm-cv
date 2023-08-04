@@ -26,6 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#project_research_experience">Project & Research Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#work_experience">Work Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
@@ -65,15 +66,62 @@
                 </div>
             </section>
             <hr class="m-0" />
+            <!-- Project & Research Experience-->
+            <section class="resume-section" id="project_research_experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Project & Research Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-3">
+                                RLock | A Redis distributed lock developed based on Golang
+                                <a href="https://github.com/pjimming/rlock" target="_blank"><i class="fab fa-github fa-bounce"></i></a>
+                            </h3>
+                            <div class="subheading mb-2">Personal Development🙋</div>
+                            <p class="mb-1">Under the distributed system, resources are protected by using locks, and due to the expiration mechanism of the Redis database, the possibility of deadlocks is largely avoided. At the same time, the lock implements functions such as reentrancy, blocking application, and asynchronous lease renewal. In the case of multiple Redis nodes, the RedLock algorithm is implemented to balance high availability and data consistency.</p>
+                            <ul class="mb-0">
+                                <li>During lock, unlock and lease renewal operations, the atomicity of operations is satisfied by executing Lua scripts.</li>
+                                <li>The Hash data structure is used to support the reentrancy of the lock. If the node resource that acquires the lock applies for the lock again, it will not be blocked.</li>
+                                <li>When requesting a lock in a blocking manner, if the tryLock fails, the lock will be continuously applied for in a spinning manner until the lock is successfully applied or the block times out.</li>
+                                <li>Use the watchdog to realize the asynchronous renewal of the Redis lock, and use the watchdog's running flag to ensure that the watchdog will not start repeatedly when the lock is re-entered. Pass the end command through the context to realize the termination and renewal operation of the watchdog.</li>
+                                <li>Implement the RedLock algorithm to ease the contradiction between high availability and data consistency in the case of multiple Redis nodes.</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">July 2023 - Aug 2023</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-3">CMDB | A configuration management database developed based on Golang</h3>
+                            <div class="subheading mb-2">Backend R&D🤵</div>
+                            <p class="mb-1">Realized the design and development of the back-end system of Qiniu Cloud's new generation of enterprise-level CMDB, and released the version through access to the CI/CD process.</p>
+                            <ul class="mb-0">
+                                <li>Independently design the distributed mechanism, and ensure data synchronization between the two systems by reconstructing the service layer of the old CMDB system. And the integrated operation failure alarm mechanism prevents abnormalities during data synchronization from being unaware.</li>
+                                <li>Develop ApiLog middleware, collect http requests at the route layer, and record related data such as request interface, operator, operation time, IP address, and whether the request is successful.</li>
+                                <li>The global search API is implemented through concurrent requests to ensure concurrency safety, and the average search time for the entire database is about 2s. Tried the prefix trie and AC automata algorithm, the effect is not ideal.</li>
+                                <li>Try to use the memory search algorithm to process domain name resolution records, process 100,000 domain name resolution records in milliseconds, and get 9,800,000 [initial domain name -> IP] records.</li>
+                                <li>Independently design the data permission system, and control the data access permissions of various roles of different users through the RBAC system.</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">May 2023 - Present</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
             <!-- Work Experience-->
             <section class="resume-section" id="work_experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Work Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Backend Development Intern</h3>
-                            <div class="subheading mb-3"><a href="https://www.qiniu.com/" target="_blank">Qiniu Cloud</a></div>
-                            <p>Mainly responsible for the design and development of multiple components of the Qiniu Cloud enterprise level DevOps platform, with the programming language mainly being Golang.</p>
+                            <h3 class="mb-3">
+                                Qiniu Cloud
+                                <a href="https://www.qiniu.com/" target="_blank"><img src="assets/img/qiniu-logo.png" alt="" style="height: 32px; border-radius: 5px" /></a>
+                            </h3>
+                            <div class="subheading mb-2">Backend Development Intern</div>
+                            <p class="mb-1">Mainly responsible for the design and development of multiple components of the Qiniu Cloud enterprise level DevOps platform, with the programming language mainly being Golang.</p>
+                            <ul class="mb-0">
+                                <li>Responsible for the development of Qiniu Cloud's early enterprise-level CMDB, designing related systems, developing back-end API interfaces, plug-ins, middleware, and daily maintenance.</li>
+                                <li>Try to optimize the mass data migration tool by using the strategy of coroutine and paging, and improve the performance by more than 100 times while ensuring the safety of concurrency. The original tool can migrate 3,200 pieces of data within 200 seconds. Within 300 seconds, 450,000 pieces of data can be migrated.</li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">May 2023 - Present</span></div>
                     </div>
@@ -124,6 +172,7 @@
                         <li class="list-inline-item"><i class="fab fa-js"></i></li>
                         <li class="list-inline-item"><i class="fab fa-npm"></i></li>
                         <li class="list-inline-item"><i class="fab fa-node"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-git-alt"></i></li>
                     </ul>
                     <div class="subheading mb-3">Ability</div>
                     <ul class="fa-ul mb-0">
@@ -158,6 +207,10 @@
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
                             Familiar with programming in Linux environment and understand some basic Linux commands. Familiar with the use of Docker containers, master the basic commands of Docker.
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Proficiency in using Git tools and understanding the use of Makefile.
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
@@ -197,6 +250,11 @@
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
                             Intermediate Industrial Internet Platform Development Engineer 2023
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
+                            Author of open source project
+                            <a href="https://github.com/pjimming/rlock" target="_blank">RLock</a>
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
