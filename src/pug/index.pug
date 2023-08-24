@@ -96,6 +96,20 @@ html(lang='en')
 
                     .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
                         .flex-grow-1
+                            h3.mb-3 BaiZe | Golang project package dependency visualization tool
+                                a(href='https://github.com/pjimming/baize' target='_blank')
+                                    i.fab.fa-github.fa-bounce
+                            .subheading.mb-2 Full Stack Development😼
+                            p.mb-1 By graphically displaying the relationship between package dependencies in a Golang project, developers can more easily and clearly view the logic of package dependencies in the current project.
+                            ul.mb-0
+                                li The backend uses Golang as the main programming language, and the framework uses go-zero.
+                                li The front end uses the Vue.js framework, the UI component library uses bootstrap5 and element-plus, and the graph rendering engine uses AntV G6.
+                                li Packaging tools used: static front-end pages use statik, and configuration files use go-bindata.
+                        .flex-shrink-0
+                            span.text-primary 2023.8
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
                             h3.mb-3 RLock | A Redis distributed lock developed based on Golang
                                 a(href='https://github.com/pjimming/rlock' target='_blank')
                                     i.fab.fa-github.fa-bounce
@@ -126,6 +140,7 @@ html(lang='en')
                                 li The global search API is implemented through concurrent requests to ensure concurrency safety, and the average search time for the entire database is about 2s. Tried the prefix trie and AC automata algorithm, the effect is not ideal.
                                 li Try to use the memory search algorithm to process domain name resolution records, process 100,000 domain name resolution records in milliseconds, and get 9,800,000 [initial domain name -> IP] records.
                                 li Independently design the data permission system, and control the data access permissions of various roles of different users through the RBAC system.
+                                li Connect to Tencent Cloud DNSPod, use CMDB as the data entry, and write plug-ins to keep the data consistent.
                         .flex-shrink-0
                             span.text-primary May 2023 - Present
 
@@ -209,6 +224,8 @@ html(lang='en')
                             i.fab.fa-css3-alt
                         li.list-inline-item 
                             i.fab.fa-js
+                        li.list-inline-item 
+                            i.fab.fa-vuejs
                         li.list-inline-item 
                             i.fab.fa-npm
                         li.list-inline-item 
@@ -308,6 +325,11 @@ html(lang='en')
                                 i.fas.fa-award.text-warning
                             | Author of open source project 
                             a(href="https://github.com/pjimming/rlock" target='_blank') RLock
+                        li
+                            span.fa-li
+                                i.fas.fa-award.text-warning
+                            | Author of open source project 
+                            a(href="https://github.com/pjimming/baize" target='_blank') Baize
                         li
                             span.fa-li
                                 i.fas.fa-award.text-warning
