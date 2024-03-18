@@ -30,7 +30,6 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#work_experience">工作经历</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">教育经历</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">技术栈</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">兴趣爱好</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">荣誉 & 奖项</a></li>
                 </ul>
             </div>
@@ -72,6 +71,24 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-3">
+                                MyDocker | 手写Docker容器引擎
+                                <a href="https://github.com/pjimming/mydocker" target="_blank"><i class="fab fa-github fa-bounce"></i></a>
+                            </h3>
+                            <div class="subheading mb-2">独立开发😼</div>
+                            <p class="mb-1">从零实现Docker的大致功能，如实现Docker的隔离性、构建Docker的镜像、容器的生命周期管理以及网络虚拟化等。</p>
+                            <ul class="mb-0">
+                                <li>项目基于Golang开发，使用到了Cgo以及urfave/cli库等工具或第三方包。</li>
+                                <li>通过调用Namespace，Cgroups等Linux内核API，实现容器的视图隔离与资源限制。</li>
+                                <li>使用busybox作为基础镜像，通过调用pivotRoot实现文件系统隔离，OverlayFS实现镜像分层存储，并且通过挂载外部文件系统，实现容器内数据持久化。</li>
+                                <li>实现容器的生命周期管理的基本操作，如容器后台运行，查看容器列表与日志，进入、停止、删除容器，通过容器制作镜像，指定环境变量运行等。</li>
+                                <li>通过构建容器网络的概念模型和模块调用关系、IP 地址分配方案，以及网络模块的接口设计和实现，并且通过实现 Bridge 驱动给容器连上外部网络。</li>
+                            </ul>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2024.2 - 2024.3</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-3">
                                 白泽 | Golang 项目包依赖可视化工具
                                 <a href="https://github.com/pjimming/baize" target="_blank"><i class="fab fa-github fa-bounce"></i></a>
                             </h3>
@@ -109,13 +126,11 @@
                             <div class="subheading mb-2">后台研发🤵</div>
                             <p class="mb-1">实现了七牛云新一代企业级 CMDB 的后端系统的设计、研发，并通过接入 CI/CD 流程进行版本发布。</p>
                             <ul class="mb-0">
-                                <li>独立设计分布式机制，通过重构之前旧 CMDB 系统的 service 层，保证两个系统间数据同步。并且集成操作失败告警机制，防止数据同步时发生异常而不能感知。</li>
-                                <li>开发 ApiLog 中间件，通过在 route 层对 http 请求进行采集，记录请求接口、操作人、操作耗时、IP 地址、请求是否成功等相关数据。</li>
-                                <li>通过并发请求实现全局搜索 API，保证并发安全，全库搜索耗时平均 2s 左右。尝试过前缀字典树和 AC 自动机算法，效果不理想。</li>
-                                <li>尝试使用记忆化搜索的算法对域名解析记录进行处理，在毫秒级的时间里处理 100,000 条域名解析记录，可以得到 9,800,000 条【初始域名 -> IP】的记录。</li>
-                                <li>独立设计数据权限系统，通过 RBAC 系统来实现控制不同用户的多种角色的数据访问权限。</li>
-                                <li>对接腾讯云 DNSPod，使 CMDB 作为数据入口，编写插件使数据保持一致。</li>
-                                <li>通过远程带外控制生成 jnlp 文件，运行 vnc 环境，远程控制服务器。</li>
+                                <li>项目Top1贡献者，并且根据SRE团队需求，定制化了多个模块，包括但不限于DNS记录管理、裸金属带外远程管理，帮助SRE团队减少运营成本、提高运营效率、减少宕机时间、提高服务质量。</li>
+                                <li>尝试通过使用协程和分页的策略对海量数据迁移工具进行优化，在保证并发安全的情况下，将性能提升了100多倍，原本的工具在200秒内可迁移3,200条数据，优化完之后在300秒的时间内，测试环境可以迁移450,000条数据，在生产环境下，迁移效率更快。</li>
+                                <li>开发ApiLog中间件，通过在route层对http请求进行采集，记录请求接口、操作人、操作耗时、IP地址、请求是否成功等相关数据。</li>
+                                <li>通过并发请求实现全局搜索API，保证并发安全，全库搜索耗时平均2s左右。尝试过前缀字典树和AC自动机算法，效果不理想。</li>
+                                <li>尝试使用记忆化搜索的算法对域名解析记录进行处理，在毫秒级的时间里处理100,000条域名解析记录，可以得到9,800,000条【初始域名 -> IP】的记录，尝试过使用图数据库neo4j，效果不理想。</li>
                             </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">2023.5 - 至今</span></div>
@@ -136,11 +151,12 @@
                             <div class="subheading mb-2">实习生，基础架构部</div>
                             <p class="mb-1">主要负责七牛云企业级 DevOps 平台的多个组件的设计与开发，编程语言主要为 Golang。</p>
                             <ul class="mb-0">
-                                <li>负责七牛云早期企业级 CMDB 的开发，设计相关系统，开发后端 API 接口、插件、中间件以及日常维护。</li>
-                                <li>尝试通过使用协程和分页的策略对海量数据迁移工具进行优化，在保证并发安全的情况下，将性能提升了 100 多倍，原本的工具在 200 秒内可迁移 3,200 条数据，优化完之后在 300 秒的时间内，可以迁移 450,000 条数据。</li>
+                                <li>负责七牛云CMDB后端API接口、相关插件、中间件的研发以及日常维护。</li>
+                                <li>负责七牛云私有云运维平台部分后端API接口的研发以及日常维护。</li>
+                                <li>自研开发提效工具，可指定表生成对应的模型以及增删改查接口，提高研发效率。</li>
                             </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2023.5 - 至今</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">2023.5 - 2024.3</span></div>
                     </div>
                 </div>
             </section>
@@ -250,14 +266,6 @@
             </section>
             <hr class="m-0" />
             <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">兴趣爱好</h2>
-                    <p>在户外我喜欢追求美景与身体锻炼，进入大自然去感受天工之美景，去球场感受技巧与天赋之魅力。</p>
-                    <p class="mb-0">当我独处或者坐在电脑前，我喜欢观看历史相关的作品、深邃的纪录片、科幻的电影；接触过一点积木、模型；会花大量时间在编程上。</p>
-                </div>
-            </section>
-            <hr class="m-0" />
             <!-- Awards-->
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
@@ -266,7 +274,7 @@
                     <ul class="fa-ul">
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
-                            七牛云最强开发 2023
+                            浙江科技大学优秀毕业生 2024
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-award text-warning"></i></span>
